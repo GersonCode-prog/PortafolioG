@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis Certificados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Permitir que los elementos se envuelvan en pantallas pequeñas */
+        }
+
+        #regresar-btn {
+            padding: 10px;
+            text-decoration: none;
+            background-color: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Agregar espacio en la parte superior en pantallas pequeñas */
+        }
+
+        #regresar-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .certificate {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+
+        .certificate img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .certificate h2 {
+            margin-top: 10px;
+            color: #555;
+        }
+
+        .certificate p {
+            color: #777;
+        }
+
+        /* Estilos para pantallas más pequeñas */
+        @media screen and (max-width: 600px) {
+            h1 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            #regresar-btn {
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>
+        Mis Certificados y Diplomas
+        <a id="regresar-btn" href="index.html">Regresar al Portafolio</a>
+    </h1>
+
+    <div class="certificate">
+        <img src="img/certificado1.jpg" alt="Certificado 1">
+        <h2>Certificado - Udemy</h2>
+        <p>Este curso se trata de Scrum Master</p>
+    </div>
+
+    <div class="certificate">
+        <img src="img/certificado2.jpg" alt="Certificado 2">
+        <h2>Certificado - Udemy</h2>
+        <p>Este curso trata de la creación de un sistema web de citas medicas</p>
+    </div>
+
+    <div class="certificate">
+        <img src="img/certificado3.jpg" alt="Certificado 2">
+        <h2>Certificado - Udemy</h2>
+        <p>Este curso trata de la creación de un sistema web para la gestion de una universidad</p>
+    </div>
+
+    <!-- Agrega más divs "certificate" según sea necesario -->
+
+</body>
+</html>
