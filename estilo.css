@@ -201,7 +201,7 @@ html{
     left: 0;
     width: 0;
     height: 100%;
-    background-color: #1CB698;
+    background-color: #00ffcc;
     z-index: -1;
     transition: 1s;
 }
@@ -590,7 +590,7 @@ html{
     top: 40%;
     background-color: #252A2E;
     padding: 20px;
-    max-swidth: 350px;
+    max-width: 350px;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -755,7 +755,7 @@ span::after {
         color: #030000;
     }
     100% {
-        color: #07588f;
+        color: #0a86d8;
     }50% {
         color: #548f07;
     }
