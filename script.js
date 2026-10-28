@@ -1,67 +1,165 @@
-let menuVisible = false;
-//Función que oculta o muestra el menu
+// =========================================================
+// MENU RESPONSIVE
+// =========================================================
+var menuVisible = false;
+
+// Función que oculta o muestra el menú
 function mostrarOcultarMenu(){
+    var nav = document.getElementById("nav");
+    menuVisible = !menuVisible;
     if(menuVisible){
-        document.getElementById("nav").classList ="";
-        menuVisible = false;
+        nav.classList.add("responsive");
     }else{
-        document.getElementById("nav").classList ="responsive";
-        menuVisible = true;
+        nav.classList.remove("responsive");
     }
 }
 
+// Oculta el menú una vez que se selecciona una opción
 function seleccionar(){
-    //oculto el menu una vez que selecciono una opcion
-    document.getElementById("nav").classList = "";
+    document.getElementById("nav").classList.remove("responsive");
     menuVisible = false;
 }
-//Funcion que aplica las animaciones de las habilidades
+
+// Cierra el menú si se hace clic fuera de él
+document.addEventListener("click", function(e){
+    if(!menuVisible) return;
+    var nav = document.getElementById("nav");
+    var boton = document.querySelector(".nav-responsive");
+    if(!nav.contains(e.target) && !boton.contains(e.target)){
+        seleccionar();
+    }
+});
+
+// =========================================================
+// BARRAS DE HABILIDADES
+// Lee el porcentaje escrito en cada barra (<span>45%</span>),
+// así ya no hace falta una clase/keyframe por cada skill.
+// =========================================================
+var habilidadesAnimadas = false;
+
 function efectoHabilidades(){
+    if(habilidadesAnimadas) return;
+
     var skills = document.getElementById("skills");
     var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
+
     if(distancia_skills >= 300){
-        let habilidades = document.getElementsByClassName("progreso");
-        habilidades[0].classList.add("javascript");
-        habilidades[1].classList.add("htmlcss");
-        habilidades[2].classList.add("photoshop");
-        habilidades[3].classList.add("wordpress");
-        habilidades[4].classList.add("drupal");
-        habilidades[5].classList.add("comunicacion");
-        habilidades[6].classList.add("trabajo");
-        habilidades[7].classList.add("creatividad");
-        habilidades[8].classList.add("dedicacion");
-        habilidades[9].classList.add("proyect");
+        var barras = document.querySelectorAll(".skills .progreso");
+        for(var i = 0; i < barras.length; i++){
+            var etiqueta = barras[i].querySelector("span");
+            var valor = etiqueta ? etiqueta.textContent.trim() : "0%";
+            barras[i].style.width = valor;
+            barras[i].classList.add("animar");
+        }
+        habilidadesAnimadas = true;
     }
 }
 
-
-//detecto el scrolling para aplicar la animacion de la barra de habilidades
-window.onscroll = function(){
-    efectoHabilidades();
-} 
-
-function actualizarReloj() {
-    const ahora = new Date();
-
-    const hora = ahora.getHours();
-    const minuto = ahora.getMinutes();
-    const segundo = ahora.getSeconds();
-    const ampm = hora >= 12 ? 'PM' : 'AM';
-
-    const horaMostrar = hora % 12 || 12; // Formato de 12 horas
-
-    document.getElementById('hora').textContent = horaMostrar.toString().padStart(2, '0');
-    document.getElementById('minuto').textContent = minuto.toString().padStart(2, '0');
-    document.getElementById('segundo').textContent = segundo.toString().padStart(2, '0');
-    document.getElementById('ampm').textContent = ampm;
-
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    const fecha = ahora.toLocaleDateString('es-ES', options);
-    document.getElementById('fecha').textContent = fecha;
+// =========================================================
+// HEADER Y LINK ACTIVO SEGÚN LA SECCIÓN VISIBLE
+// =========================================================
+function actualizarHeader(){
+    var header = document.querySelector(".contenedor-header");
+    if(window.pageYOffset > 50){
+        header.classList.add("scrolled");
+    }else{
+        header.classList.remove("scrolled");
+    }
 }
 
+function marcarLinkActivo(){
+    var secciones = document.querySelectorAll("section[id]");
+    var links = document.querySelectorAll("#nav a");
+    var posicion = window.pageYOffset + 120;
+    var actual = "";
 
-actualizarReloj(); // Llamar a la función para mostrar la hora actual al cargar la página
+    for(var i = 0; i < secciones.length; i++){
+        if(secciones[i].offsetTop <= posicion){
+            actual = secciones[i].id;
+        }
+    }
+    for(var j = 0; j < links.length; j++){
+        if(links[j].getAttribute("href") === "#" + actual){
+            links[j].classList.add("activo");
+        }else{
+            links[j].classList.remove("activo");
+        }
+    }
+}
 
-// Actualizar el reloj cada segundo
+// =========================================================
+// ANIMACIÓN DE APARICIÓN AL HACER SCROLL
+// =========================================================
+var elementosRevelar = [];
+
+function prepararRevelar(){
+    var selector = ".sobremi .col, .skills .col, .curriculum .item, .portfolio .proyecto, .contacto .col";
+    var nodos = document.querySelectorAll(selector);
+    for(var i = 0; i < nodos.length; i++){
+        nodos[i].classList.add("revelar");
+        elementosRevelar.push(nodos[i]);
+    }
+}
+
+function revelarElementos(){
+    var limite = window.innerHeight - 80;
+    for(var i = elementosRevelar.length - 1; i >= 0; i--){
+        if(elementosRevelar[i].getBoundingClientRect().top < limite){
+            elementosRevelar[i].classList.add("visible");
+            elementosRevelar.splice(i, 1);
+        }
+    }
+}
+
+// =========================================================
+// SCROLL (con requestAnimationFrame para no saturar)
+// =========================================================
+var esperandoFrame = false;
+
+function alHacerScroll(){
+    efectoHabilidades();
+    actualizarHeader();
+    marcarLinkActivo();
+    revelarElementos();
+    esperandoFrame = false;
+}
+
+window.addEventListener("scroll", function(){
+    if(!esperandoFrame){
+        esperandoFrame = true;
+        (window.requestAnimationFrame || setTimeout)(alHacerScroll, 16);
+    }
+});
+
+// =========================================================
+// RELOJ
+// =========================================================
+function actualizarReloj(){
+    var ahora = new Date();
+
+    var hora = ahora.getHours();
+    var minuto = ahora.getMinutes();
+    var segundo = ahora.getSeconds();
+    var ampm = hora >= 12 ? "PM" : "AM";
+    var horaMostrar = hora % 12 || 12; // Formato de 12 horas
+
+    document.getElementById("hora").textContent = dosDigitos(horaMostrar);
+    document.getElementById("minuto").textContent = dosDigitos(minuto);
+    document.getElementById("segundo").textContent = dosDigitos(segundo);
+    document.getElementById("ampm").textContent = ampm;
+
+    var opciones = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+    document.getElementById("fecha").textContent = ahora.toLocaleDateString("es-GT", opciones);
+}
+
+function dosDigitos(n){
+    return (n < 10 ? "0" : "") + n;
+}
+
+// =========================================================
+// INICIO
+// =========================================================
+prepararRevelar();
+actualizarReloj();
 setInterval(actualizarReloj, 1000);
+alHacerScroll(); // aplica estados correctos si la página carga a mitad del scroll
