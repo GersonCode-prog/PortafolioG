@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Gersón Enrique Batún Suriano - Ingeniero en Sistemas, desarrollo web y QA.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Portfolio</title>
+    <title>Portfolio | Gersón Batún</title>
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
@@ -13,17 +14,14 @@
     <div class="contenedor-header">
         <header>
             <div class="logo">
-                <a href="#">GERSON</a>
+                <a href="#inicio">GERSON</a>
             </div>
             <div class="reloj">
-                <span id="hora"></span>
-                <span id="minuto"></span>
-                <span id="segundo"></span>
-                <span id="ampm"></span>
+                <span id="hora"></span><span id="minuto"></span><span id="segundo"></span><span id="ampm"></span>
                 <br>
                 <span id="fecha"></span>
             </div>
-            
+
             <nav id="nav">
                 <ul>
                     <li><a href="#inicio" onclick="seleccionar()">INICIO</a></li>
@@ -34,9 +32,9 @@
                     <li><a href="#contacto" onclick="seleccionar()">CONTACTO</a></li>
                 </ul>
             </nav>
-            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+            <button type="button" class="nav-responsive" onclick="mostrarOcultarMenu()" aria-label="Abrir men&uacute;">
                 <i class="fa-solid fa-bars"></i>
-            </div>
+            </button>
         </header>
     </div>
 
@@ -44,11 +42,10 @@
     <section id="inicio" class="inicio">
         <div class="contenido-banner">
             <div class="contenedor-img">
-                <img src="img/perfil.jpeg" alt="">
+                <img src="img/perfil.jpeg" alt="Foto de Gersón Batún">
             </div>
             <h1>Gersón Enrique Batún Suriano</h1>
-            <h2>Ingeniero en Sistemas (Cierre de Pemsun) - Experto en desarrollo web y Analisis de QA</h2>
-            
+            <h2>Ingeniero en Sistemas (Cierre de Pensum) - Experto en desarrollo web y An&aacute;lisis de QA</h2>
         </div>
     </section>
 
@@ -56,7 +53,7 @@
     <section id="sobremi" class="sobremi">
         <div class="contenido-seccion">
             <h2>Sobre Mí</h2>
-            <p><span>Hola, soy Gersón Enrique Batún Suriano.</span> un apasionado joven de 23 años experto en <span>Desarollo Web y Analista QA.</span>
+            <p><span>Hola, soy Gersón Enrique Batún Suriano,</span> un apasionado joven de 23 años experto en <span>Desarrollo Web y Análisis QA.</span>
                  Mi objetivo es transformar ideas en soluciones digitales efectivas, optimizando la experiencia del usuario y garantizando la calidad en cada proyecto que abordo. Con un enfoque en el cierre de pensum,
                  mi objetivo es continuar aprendiendo y mejorando constantemente, manteniéndome
                   al día con las últimas tendencias tecnológicas y estándares de la industria.</p>
@@ -76,15 +73,15 @@
                         </li>
                         <li>
                             <strong>Email</strong>
-                            batunsuriano7
+                            batunsuriano7@gmail.com
                         </li>
                         <li>
                             <strong>Website</strong>
-                            https://portafoliogerson.netlify.app
+                            portafoliogerson.netlify.app
                         </li>
                         <li>
                             <strong>Dirección</strong>
-                            Guazacapan
+                            Guazacapán, Santa Rosa
                         </li>
                         <li>
                             <strong>Cargo</strong>
@@ -97,49 +94,23 @@
                 <div class="col">
                     <h3>Intereses</h3>
                     <div class="contenedor-intereses">
-                        <div class="interes">
-                            <i class="fa-solid fa-gamepad"></i>
-                            <span>JUEGOS</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-headphones"></i>
-                            <span>MUSICA</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-plane"></i>
-                            <span>VIAJAR</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-computer"></i>
-                            <span>APRENDER</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-futbol"></i>
-                            <span>DEPORTE</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-book"></i>
-                            <span>LIBROS</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-mobile"></i>
-                            <span>TECNOLOGIA</span>
-                        </div>
-                        <div class="interes">
-                            <i class="fa-solid fa-camera"></i>
-                            <span>FOTOS</span>
-                        </div>
-                        
+                        <div class="interes"><i class="fa-solid fa-gamepad"></i><span>JUEGOS</span></div>
+                        <div class="interes"><i class="fa-solid fa-headphones"></i><span>MÚSICA</span></div>
+                        <div class="interes"><i class="fa-solid fa-plane"></i><span>VIAJAR</span></div>
+                        <div class="interes"><i class="fa-solid fa-computer"></i><span>APRENDER</span></div>
+                        <div class="interes"><i class="fa-solid fa-futbol"></i><span>DEPORTE</span></div>
+                        <div class="interes"><i class="fa-solid fa-book"></i><span>LIBROS</span></div>
+                        <div class="interes"><i class="fa-solid fa-mobile"></i><span>TECNOLOGÍA</span></div>
+                        <div class="interes"><i class="fa-solid fa-camera"></i><span>FOTOS</span></div>
                     </div>
                 </div>
             </div>
             <a href="CV Gersón Enrique Batún Suriano.pdf" download="MiCV.pdf">
-                <button>
+                <button type="button">
                     Descargar CV <i class="fa-solid fa-download"></i>
                     <span class="overlay"></span>
                 </button>
             </a>
-            
         </div>
     </section>
 
@@ -153,43 +124,23 @@
                     <h3>Technical Skills</h3>
                     <div class="skill">
                         <span>Javascript</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>45%</span>
-                            </div>
-                        </div>
+                        <div class="barra-skill"><div class="progreso"><span>45%</span></div></div>
                     </div>
                     <div class="skill">
-                        <span>HTML & CSS</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>75%</span>
-                            </div>
-                        </div>
+                        <span>HTML &amp; CSS</span>
+                        <div class="barra-skill"><div class="progreso"><span>75%</span></div></div>
                     </div>
                     <div class="skill">
                         <span>PHP</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>50%</span>
-                            </div>
-                        </div>
+                        <div class="barra-skill"><div class="progreso"><span>50%</span></div></div>
                     </div>
                     <div class="skill">
-                        <span>Power Bi y Tableau</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>50%</span>
-                            </div>
-                        </div>
+                        <span>Power BI y Tableau</span>
+                        <div class="barra-skill"><div class="progreso"><span>50%</span></div></div>
                     </div>
                     <div class="skill">
-                        <span>MYSQL</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>55%</span>
-                            </div>
-                        </div>
+                        <span>MySQL</span>
+                        <div class="barra-skill"><div class="progreso"><span>55%</span></div></div>
                     </div>
                 </div>
                 <!-- Professional Skills -->
@@ -197,43 +148,23 @@
                     <h3>Professional Skills</h3>
                     <div class="skill">
                         <span>Comunicación</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>80%</span>
-                            </div>
-                        </div>
+                        <div class="barra-skill"><div class="progreso"><span>80%</span></div></div>
                     </div>
                     <div class="skill">
                         <span>Trabajo en Equipo</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>80%</span>
-                            </div>
-                        </div>
+                        <div class="barra-skill"><div class="progreso"><span>80%</span></div></div>
                     </div>
                     <div class="skill">
                         <span>Creatividad</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>90%</span>
-                            </div>
-                        </div>
+                        <div class="barra-skill"><div class="progreso"><span>90%</span></div></div>
                     </div>
                     <div class="skill">
                         <span>Dedicación</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>90%</span>
-                            </div>
-                        </div>
+                        <div class="barra-skill"><div class="progreso"><span>90%</span></div></div>
                     </div>
                     <div class="skill">
                         <span>Liderazgo</span>
-                        <div class="barra-skill">
-                            <div class="progreso">
-                                <span>90%</span>
-                            </div>
-                        </div>
+                        <div class="barra-skill"><div class="progreso"><span>90%</span></div></div>
                     </div>
                 </div>
             </div>
@@ -250,49 +181,33 @@
                     <div class="item izq">
                         <h4>Nivel Primario</h4>
                         <span class="casa">Colegio Particular Mixto Francisco Orantes</span>
-                        <span class="fecha">2007-2012</span>
-                        <p>Colegio Particular Mixto Francisco Orantes, Guazacapán Santa Rosa.
-                            </p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
+                        <span class="fecha">2007 - 2012</span>
+                        <p>Colegio Particular Mixto Francisco Orantes, Guazacapán, Santa Rosa.</p>
+                        <div class="conectori"><div class="circuloi"></div></div>
                     </div>
                     <div class="item izq">
                         <h4>Nivel Básico</h4>
                         <span class="casa">Gregorio Gallardo</span>
-                        <span class="fecha">2013-2015</span>
-                        <p>Instituto Mixto de Educación Básica por Cooperativa,
-                            	Guazacapán Santa Rosa.
-                            </p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
+                        <span class="fecha">2013 - 2015</span>
+                        <p>Instituto Mixto de Educación Básica por Cooperativa, Guazacapán, Santa Rosa.</p>
+                        <div class="conectori"><div class="circuloi"></div></div>
                     </div>
                     <div class="item izq">
                         <h4>Nivel Diversificado</h4>
                         <span class="casa">CTI</span>
-                        <span class="fecha">2016-2017</span>
-                        <p>Colegio particular Mixto Tecnológico de informática,
-                            Guazacapán Santa Rosa
-                            </p>
-                        <div class="conectori">
-                            <div class="circuloi"></div>
-                        </div>
+                        <span class="fecha">2016 - 2017</span>
+                        <p>Colegio Particular Mixto Tecnológico de Informática, Guazacapán, Santa Rosa.</p>
+                        <div class="conectori"><div class="circuloi"></div></div>
                     </div>
-                
-                <div class="item izq">
-                    <h4>Universitarios</h4>
-                    <span class="casa">UMG</span>
-                    <span class="fecha">2018-2022</span>
-                    <p>Cierre de Pensum en la Carrera de Ingeniería en Sistemas de la 
-                        Universidad Mariano Gálvez de Guatemala. Chiquimulilla Santa Rosa.
-                        </p>
-                    <div class="conectori">
-                        <div class="circuloi"></div>
+                    <div class="item izq">
+                        <h4>Universitarios</h4>
+                        <span class="casa">UMG</span>
+                        <span class="fecha">2018 - 2022</span>
+                        <p>Cierre de Pensum en la carrera de Ingeniería en Sistemas de la
+                            Universidad Mariano Gálvez de Guatemala, Chiquimulilla, Santa Rosa.</p>
+                        <div class="conectori"><div class="circuloi"></div></div>
                     </div>
                 </div>
-            </div>
-            
 
                 <div class="col derecha">
                     <h3>Experiencia de trabajo</h3>
@@ -301,39 +216,31 @@
                         <span class="casa">Tiendas Mateo</span>
                         <span class="fecha">2018</span>
                         <p>Fui vendedor de zapatos y jefe en una tienda de calzado llamada Tiendas Mateo. Durante mi tiempo como vendedor, adquirí valiosas habilidades en la venta de zapatos.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
+                        <div class="conectord"><div class="circulod"></div></div>
                     </div>
                     <div class="item der">
                         <h4>Maestro</h4>
                         <span class="casa">Colegio Tecnológico de Informática</span>
                         <span class="fecha">2020</span>
                         <p>Fui profesor de computación y programación básica. Durante mi tiempo como profesor, tuve la oportunidad de enseñar a los estudiantes los
-                             conceptos fundamentales de la computación y la programación. </p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
+                             conceptos fundamentales de la computación y la programación.</p>
+                        <div class="conectord"><div class="circulod"></div></div>
                     </div>
                     <div class="item der">
                         <h4>Extensionista</h4>
-                        <span class="casa">Ministerio de Agricultura, Ganadería Y Alimentación</span>
+                        <span class="casa">Ministerio de Agricultura, Ganadería y Alimentación</span>
                         <span class="fecha">2021</span>
                         <p>Apoyo en las capacitaciones sobre agricultura familiar en los CADER, así mismo apoyo en la elaboración de Huertos Comunales en los diferentes CADER de Guazacapán, Santa Rosa.</p>
-                        <div class="conectord">
-                            <div class="circulod"></div>
-                        </div>
+                        <div class="conectord"><div class="circulod"></div></div>
                     </div>
-                        <div class="item der">
-                            <h4>Desarrollador Web</h4>
-                            <span class="casa">Cyber World (Negocio Propio)</span>
-                            <span class="fecha">2022 - 2023</span>
-                            <p>Actualmete desarrollo páginas web y especialista en formateo de computadoras. En mi rol como desarrollador de páginas web, me dediqué a la creación y
-                                 mantenimiento de sitios web, utilizando diversas tecnologías y lenguajes de programación.</p>
-                            <div class="conectord">
-                                <div class="circulod"></div>
-                            </div>
-                   
+                    <div class="item der">
+                        <h4>Desarrollador Web</h4>
+                        <span class="casa">Cyber World (Negocio Propio)</span>
+                        <span class="fecha">2022 - 2023</span>
+                        <p>Desarrollo de páginas web y especialista en formateo de computadoras. En mi rol como desarrollador web, me dediqué a la creación y
+                             mantenimiento de sitios web, utilizando diversas tecnologías y lenguajes de programación.</p>
+                        <div class="conectord"><div class="circulod"></div></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -345,89 +252,64 @@
             <h2>PORTFOLIO</h2>
             <div class="galeria">
                 <div class="proyecto">
-                    <img src="img/webfune.PNG" alt="">
-                    <div class="overlay">
-                        <h3>Pagina Web</h3>
-                        <p>programación</p>
-                    </div>
+                    <img src="img/webfune.PNG" alt="Proyecto: página web" loading="lazy">
+                    <div class="overlay"><h3>Página Web</h3><p>Programación</p></div>
                 </div>
                 <div class="proyecto">
-                    <img src="img/webcyber.PNG" alt="">
-                    <div class="overlay">
-                        <h3>Pagina Web</h3>
-                        <p>programación</p>
-                    </div>
+                    <img src="img/webcyber.PNG" alt="Proyecto: página web Cyber World" loading="lazy">
+                    <div class="overlay"><h3>Página Web</h3><p>Programación</p></div>
                 </div>
                 <div class="proyecto">
-                    <img src="img/inicio.png" alt="">
-                    <div class="overlay">
-                        <h3>MVC</h3>
-                        <p>programación</p>
-                    </div>
+                    <img src="img/inicio.png" alt="Proyecto: aplicación MVC" loading="lazy">
+                    <div class="overlay"><h3>MVC</h3><p>Programación</p></div>
                 </div>
                 <div class="proyecto">
-                    <img src="img/login1.png" alt="">
-                    <div class="overlay">
-                        <h3>login</h3>
-                        <p>programación</p>
-                    </div>
+                    <img src="img/login1.png" alt="Proyecto: login" loading="lazy">
+                    <div class="overlay"><h3>Login</h3><p>Programación</p></div>
                 </div>
                 <div class="proyecto">
-                    <img src="img/p5.jpg" alt="">
-                    <div class="overlay">
-                        <h3>Diseño Creativo</h3>
-                        <p>Fotografía</p>
-                    </div>
+                    <img src="img/p5.jpg" alt="Diseño creativo" loading="lazy">
+                    <div class="overlay"><h3>Diseño Creativo</h3><p>Fotografía</p></div>
                 </div>
                 <div class="proyecto">
-                    <img src="img/p6.jpg" alt="">
-                    <div class="overlay">
-                        <h3>Diseño Creativo</h3>
-                        <p>Fotografía</p>
-                    </div>
+                    <img src="img/p6.jpg" alt="Diseño creativo" loading="lazy">
+                    <div class="overlay"><h3>Diseño Creativo</h3><p>Fotografía</p></div>
                 </div>
-                <div class="portafolio">
-                    <a href="https://github.com/GersonCode-prog" class="button">
-                        Ver Proyectos <i class="fa-solid fa-external-link"></i>
-                        <span class="overlay"></span>
-                    </a>
-                </div>
-                <div class="portafolio">
-                    <a href="certificados.html" class="button">
-                        Ver Certificados <i class="fa-solid fa-external-link"></i>
-                        <span class="overlay"></span>
-                    </a>
-                </div>
-                
+            </div>
+
+            <div class="acciones">
+                <a href="https://github.com/GersonCode-prog" class="button" target="_blank" rel="noopener">
+                    Ver Proyectos <i class="fa-solid fa-external-link"></i>
+                    <span class="overlay"></span>
+                </a>
+                <a href="certificados.html" class="button">
+                    Ver Certificados <i class="fa-solid fa-external-link"></i>
+                    <span class="overlay"></span>
+                </a>
             </div>
         </div>
     </section>
-
-    
 
     <!-- SECCION CONTACTO -->
     <section id="contacto" class="contacto">
         <div class="contenido-seccion">
             <h2>CONTACTO</h2>
             <div class="fila">
-                <!-- Formulario -->
-               
-                <!-- Mapa -->
                 <div class="col">
-                    <img src="img/foto2.jpg" alt="">
+                    <img src="img/foto2.jpg" alt="Contacto" loading="lazy">
                     <div class="info">
                         <ul>
                             <li>
                                 <i class="fa-solid fa-location-dot"></i>
-                                Guazacapan, Santa Rosa, Guatemala
+                                Guazacapán, Santa Rosa, Guatemala
                             </li>
                             <li>
                                 <i class="fa-solid fa-mobile-screen"></i>
-                                Contacto: 3583-3220 
+                                <a href="tel:+50235833220">+502 3583-3220</a>
                             </li>
                             <li>
                                 <i class="fa-solid fa-envelope"></i>
-                                Correo: batunsuriano7@gmail.com
+                                <a href="mailto:batunsuriano7@gmail.com">batunsuriano7@gmail.com</a>
                             </li>
                         </ul>
                     </div>
@@ -438,11 +320,9 @@
 
     <!-- footer -->
     <footer>
-    
-        <a href="#inicio" id="scroll-to-top" class="arriba">
-            <i class="fa-solid fa-angles-up"></i> 
+        <a href="#inicio" id="scroll-to-top" class="arriba" aria-label="Volver arriba">
+            <i class="fa-solid fa-angles-up"></i>
         </a>
-        
         <h1 class="animated-text">GERSONCODE</h1>
     </footer>
 
